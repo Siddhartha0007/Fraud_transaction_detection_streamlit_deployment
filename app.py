@@ -211,9 +211,7 @@ from pandas.plotting import scatter_matrix
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 import xgboost as xgb
-import lightgbm as lgb
 from xgboost import XGBClassifier
-from lightgbm import LGBMClassifier
 from sklearn.metrics import roc_curve,roc_auc_score
 from sklearn.metrics import log_loss
 from sklearn.preprocessing import LabelEncoder
