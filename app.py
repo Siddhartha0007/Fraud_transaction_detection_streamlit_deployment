@@ -233,7 +233,7 @@ import sweetviz as sv
 le_encoder=LabelEncoder()
 ###############################################Data Processing###########################
 data=pd.read_csv("new_balanced_data.csv")
-loaded_model=joblib.load(open("Xgb_classifer_model_intelligence.pkl","rb"))
+loaded_model=joblib.load(open("Xgb_classifer_model_intelligence1.pkl","rb"))
 
 
 def st_display_sweetviz(report_html,width=1000,height=500):
