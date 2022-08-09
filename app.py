@@ -1019,7 +1019,7 @@ def main():
                             st.write("Your Transaction is Fraud")
                             image1= Image.open("im14.png")
                             st.image(image1,use_column_width=False)
-                         else:   
+                        else:   
                             st.write("enter proper values as inputs")
                         st.success('Done!')       
                         #st.success('The Transaction is --> {}'.format(result_pred))
