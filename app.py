@@ -18,13 +18,11 @@
  ###  Import Libreries  
 import streamlit as st
 from streamlit_option_menu import option_menu
-st.set_option('deprecation.showPyplotGlobalUse', False)
 import contractions 
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-warnings.filterwarnings(action='ignore', category=DataConversionWarning)
 from collections import  Counter
 import inflect
 from bs4 import BeautifulSoup
@@ -105,8 +103,6 @@ import plotly.figure_factory as ff
 from plotly.subplots import make_subplots
 sns.set_palette("hls")
 plt.style.use('fivethirtyeight')
-import warnings
-warnings.filterwarnings("ignore")
 import numpy as np
 import scipy
 from matplotlib import pyplot as plt
