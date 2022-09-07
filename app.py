@@ -221,7 +221,7 @@ import sweetviz as sv
 le_encoder=LabelEncoder()
 ###############################################Data Processing###########################
 data=pd.read_csv("new_balanced_data.csv")
-#data1=pd.read_csv("trans_data.csv")
+data1=pd.read_csv("data1.csv")
 loaded_model=pickle.load(open("Xgb_classifer_model_intelligence.pkl","rb"))
 
 
