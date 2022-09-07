@@ -458,7 +458,7 @@ def label_analysis4():
     df_sample1 =data.describe(include='all').round(2).T
     colorscale = [[0, '#4d004c'],[.5, '#f2e5ff'],[1, '#ffffff']]
     fig =  ff.create_table(df_sample1, colorscale=colorscale)
-    fig.show()
+    
     return st.plotly_chart(fig)
 
 def label_analysis5():
