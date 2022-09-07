@@ -354,7 +354,7 @@ def label_analysis():
         fig=plt.gcf()
         fig.gca().add_artist(centre)
         plt.subplot(1,2,2)
-        sns.countplot(x='type',data=data[data["Fraud_Id"]==1])
+        sns.countplot(x='typeid',data=data[data["Fraud_Id"]==1])
         data[data["Fraud_Id"]==1]['typeid'].value_counts()
     p4=plot4()
     st.write("Different kind of Transactions Types on fraud data")
