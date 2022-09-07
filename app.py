@@ -639,7 +639,7 @@ def main():
     if selected == "Home":
         st.title(f"You have selected {selected}")
         
-        image= Image.open("home_img.jpg")
+        image= Image.open("home_img.JPG")
         st.image(image,use_column_width=True)
             
         st.sidebar.title("Home")        
