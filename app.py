@@ -963,14 +963,14 @@ def main():
         elif choice == "Pandas Profile":
             st.subheader("Automated EDA with Pandas Profile")
             #data_file= st.file_uploader("Upload CSV",type=['csv'])
-            df = data1
+            df = data
             st.table(df.head(10))
             profile= ProfileReport(df)
             st_profile_report(profile)
         elif choice == "Sweetviz":
             st.subheader("Automated EDA with Sweetviz")
             #data_file = st.file_uploader("Upload CSV",type=['csv'])
-            df =data1
+            df =data
             st.dataframe(df.head(10))
             if st.button("Generate Sweetviz Report"):
 
