@@ -337,7 +337,7 @@ def label_analysis():
         fig=plt.gcf()
         fig.gca().add_artist(centre)
         plt.subplot(1,2,2)
-        sns.countplot(x='type',data=data[data["Fraud_Id"]==0])
+        sns.countplot(x='typeid',data=data[data["Fraud_Id"]==0])
         data[data["Fraud_Id"]==0]['typeid'].value_counts()
         
     
