@@ -455,7 +455,7 @@ def label_analysis3():
     st.image(image2,use_column_width=False)
 
 def label_analysis4():
-    df_sample1 =data1.describe(include='all').round(2).T
+    df_sample1 =data.describe(include='all').round(2).T
     colorscale = [[0, '#4d004c'],[.5, '#f2e5ff'],[1, '#ffffff']]
     fig =  ff.create_table(df_sample1, colorscale=colorscale)
     fig.show()
