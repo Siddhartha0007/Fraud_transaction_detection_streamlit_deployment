@@ -396,7 +396,7 @@ def label_analysis():
     
     def plot9():
         fig = px.treemap(data.loc[:,:], path=[ 'typeid','Fraud_Id'], values='amount', color='Fraud_Id')
-        fig.show()
+        
         return fig
     p9=plot9()
     st.write("Multi level Tree plot for various types of transactions")
@@ -405,7 +405,7 @@ def label_analysis():
 def label_analysis1():
     def plot7():
         fig = px.sunburst(data.loc[:,:], path=['Fraud_Id', 'typeid'], values='amount', color='typeid')
-        fig.show()
+        
         return fig   
     p7=plot7()
     st.write("Multi level sunburst plot for various types of transactions")
@@ -414,7 +414,7 @@ def label_analysis1():
     
     def plot8():
         fig = px.sunburst(data.loc[:,:], path=[ 'typeid','Fraud_Id'], values='amount', color='Fraud_Id')
-        fig.show()
+        
         return fig
     p8=plot8()
     st.write("Multi level sunburst plot for various types of transactions")
