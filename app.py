@@ -734,7 +734,7 @@ def main():
         
         def plot12():
             import plotly.figure_factory as ff
-            df_sample = data1.iloc[0:10,1:9]
+            df_sample = data.iloc[0:10,1:9]
             colorscale = [[0, '#F08080'],[.5, '#6495ED'],[1, '#9FE2BF']]
             fig =  ff.create_table(df_sample, colorscale=colorscale,)
             fig.show()
