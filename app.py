@@ -737,7 +737,7 @@ def main():
             df_sample = data.iloc[0:10,1:9]
             colorscale = [[0, '#F08080'],[.5, '#6495ED'],[1, '#9FE2BF']]
             fig =  ff.create_table(df_sample, colorscale=colorscale,)
-            fig.show()
+            
             return fig
         p12=plot12()
         st.write("Data Table")
