@@ -273,10 +273,10 @@ def label_analysis():
             return "{:.1f}%\n({:d} g)".format(pct, absolute)
             
         fig, ax = plt.subplots(figsize =(10, 7))
-        wedges, texts, autotexts = ax.pie(data1.type.value_counts(),
-                                  autopct = lambda pct: func(pct, data1.type.value_counts()),
+        wedges, texts, autotexts = ax.pie(data.typeid.value_counts(),
+                                  autopct = lambda pct: func(pct, data.typeid.value_counts()),
                                   explode = explode,
-                                  labels =data1.type.unique(),
+                                  labels =data.typeid.unique(),
                                   shadow = True,
                                   
                                   startangle = 90,
@@ -284,7 +284,7 @@ def label_analysis():
                                   textprops = dict(color ="magenta"))
  
          # Adding legend
-        ax.legend(wedges,data1.type.unique(),
+        ax.legend(wedges,data.typeid.unique(),
           title ="Types of transactions",
           loc ="center left",
           bbox_to_anchor =(1, 0, 0.5, 1))
@@ -306,8 +306,8 @@ def label_analysis():
  
 # Creating plot
         fig, ax = plt.subplots(figsize =(10, 7))
-        wedges, texts, autotexts = ax.pie(data1.Fraud_Id.value_counts(),
-                                  autopct = lambda pct: func(pct, data1.Fraud_Id.value_counts()),
+        wedges, texts, autotexts = ax.pie(data.Fraud_Id.value_counts(),
+                                  autopct = lambda pct: func(pct, data.Fraud_Id.value_counts()),
                                   explode = explode,
                                   labels =["NotFraud","Fraud"],
                                   shadow = True,
@@ -332,13 +332,13 @@ def label_analysis():
     def plot3():
         plt.figure(figsize=(15,8))
         plt.subplot(1,2,1)
-        data1[data1["Fraud_Id"]==0]['type'].value_counts().plot.pie(autopct='%1.1f%%')
+        data[data["Fraud_Id"]==0]['typeid'].value_counts().plot.pie(autopct='%1.1f%%')
         centre=plt.Circle((0,0),0.7,fc='white')
         fig=plt.gcf()
         fig.gca().add_artist(centre)
         plt.subplot(1,2,2)
-        sns.countplot(x='type',data=data1[data1["Fraud_Id"]==0])
-        data1[data1["Fraud_Id"]==0]['type'].value_counts()
+        sns.countplot(x='type',data=data[data["Fraud_Id"]==0])
+        data[data["Fraud_Id"]==0]['typeid'].value_counts()
         
     
     
@@ -349,28 +349,28 @@ def label_analysis():
     def plot4():
         plt.figure(figsize=(15,8))
         plt.subplot(1,2,1)
-        data1[data1["Fraud_Id"]==1]['type'].value_counts().plot.pie(autopct='%1.1f%%')
+        data[data["Fraud_Id"]==1]['typeid'].value_counts().plot.pie(autopct='%1.1f%%')
         centre=plt.Circle((0,0),0.7,fc='white')
         fig=plt.gcf()
         fig.gca().add_artist(centre)
         plt.subplot(1,2,2)
-        sns.countplot(x='type',data=data1[data1["Fraud_Id"]==1])
-        data1[data1["Fraud_Id"]==1]['type'].value_counts()
+        sns.countplot(x='type',data=data[data["Fraud_Id"]==1])
+        data[data["Fraud_Id"]==1]['typeid'].value_counts()
     p4=plot4()
     st.write("Different kind of Transactions Types on fraud data")
     st.pyplot(p4)
     
 
     def plot5():
-        numeric_data=data1.select_dtypes(exclude=["object"]).columns.to_list()
-        categorical_data=data1.select_dtypes(include=["object"]).columns.to_list()
+        numeric_data=data.select_dtypes(exclude=["object"]).columns.to_list()
+        categorical_data=data.select_dtypes(include=["object"]).columns.to_list()
         sns.set_palette("hls")
         plt.style.use('fivethirtyeight')
         plt.subplots(figsize=(15, 15))
         plt.subplots_adjust(left=0.1, bottom=0.1, right=0.9, top=0.9, wspace=0.4, hspace=0.8)
         for i, column in enumerate(numeric_data, 1):
             plt.subplot(7, 3, i)
-            sns.boxplot(data1[column])
+            sns.boxplot(data[column])
     
     p5=plot5()
     st.write(" distributions of various continuous features")
@@ -380,7 +380,7 @@ def label_analysis():
         figure = plt.figure(figsize = [13, 7])
         sns.set_palette("hls")
         plt.style.use('fivethirtyeight')
-        sns.barplot(data1['type'].value_counts().index, data1['type'].value_counts())
+        sns.barplot(data['typeid'].value_counts().index, data['typeid'].value_counts())
         plt.title('Frequency occurence of each transaction type')
         plt.show()
          
@@ -395,7 +395,7 @@ def label_analysis():
       
     
     def plot9():
-        fig = px.treemap(data1.loc[:,:], path=[ 'type','Fraud_Id'], values='amount', color='Fraud_Id')
+        fig = px.treemap(data.loc[:,:], path=[ 'typeid','Fraud_Id'], values='amount', color='Fraud_Id')
         fig.show()
         return fig
     p9=plot9()
@@ -404,7 +404,7 @@ def label_analysis():
   
 def label_analysis1():
     def plot7():
-        fig = px.sunburst(data1.loc[:,:], path=['Fraud_Id', 'type'], values='amount', color='type')
+        fig = px.sunburst(data.loc[:,:], path=['Fraud_Id', 'typeid'], values='amount', color='typeid')
         fig.show()
         return fig   
     p7=plot7()
@@ -413,7 +413,7 @@ def label_analysis1():
     
     
     def plot8():
-        fig = px.sunburst(data1.loc[:,:], path=[ 'type','Fraud_Id'], values='amount', color='Fraud_Id')
+        fig = px.sunburst(data.loc[:,:], path=[ 'typeid','Fraud_Id'], values='amount', color='Fraud_Id')
         fig.show()
         return fig
     p8=plot8()
