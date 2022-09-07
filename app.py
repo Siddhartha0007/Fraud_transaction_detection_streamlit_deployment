@@ -18,6 +18,7 @@
  ###  Import Libreries  
 import streamlit as st
 from streamlit_option_menu import option_menu
+from PIL import Image
 import contractions 
 import pandas as pd
 import numpy as np
@@ -639,7 +640,7 @@ def main():
     if selected == "Home":
         st.title(f"You have selected {selected}")
         
-        image= Image.open("home_img.JPG")
+        image= Image.open("home_img.jpg")
         st.image(image,use_column_width=True)
             
         st.sidebar.title("Home")        
