@@ -24,9 +24,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-from PIL import Image 
-import warnings
-from sklearn.exceptions import DataConversionWarning
 warnings.filterwarnings(action='ignore', category=DataConversionWarning)
 from collections import  Counter
 import inflect
@@ -64,7 +61,6 @@ import joblib
 # Utils
 import time
 timestr = time.strftime("%Y%m%d-%H%M%S")
-import sys
 from sklearn.metrics import r2_score,accuracy_score,mean_absolute_error,mean_squared_error,mean_absolute_percentage_error 
 from sklearn.ensemble import ExtraTreesRegressor,RandomForestRegressor,AdaBoostRegressor,GradientBoostingRegressor
 from sklearn.tree import DecisionTreeRegressor
@@ -73,14 +69,10 @@ from plotly import tools
 from sklearn.model_selection import train_test_split,cross_val_score,GridSearchCV,KFold
 from sklearn.preprocessing import StandardScaler,LabelEncoder
 import plotly.figure_factory as ff
-import cufflinks as cf
 from sklearn.model_selection import StratifiedKFold, cross_val_score, KFold
 from sklearn.metrics import roc_auc_score
 import matplotlib.gridspec as gridspec
 # Setting seabon style
-sns.set_style(style='darkgrid')
-import scipy
-import re
 import plotly.express as px
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
@@ -94,9 +86,6 @@ from sklearn.metrics import mean_squared_error
 from scipy.stats.mstats import winsorize
 from scipy.stats import boxcox, probplot, norm
 from scipy.special import inv_boxcox
-import random
-import datetime
-import math
 sns.set_palette("hls")
 plt.style.use('fivethirtyeight')
 from sklearn import preprocessing
@@ -144,14 +133,11 @@ import matplotlib.pyplot as plt, numpy as np
 from sklearn.cluster import AgglomerativeClustering
 from matplotlib.colors import ListedColormap
 from sklearn import metrics
-import re
-import sys
 #preprocessing libraries
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 
 #ML libraries
-import tensorflow as tf
 from sklearn.svm import SVC
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import StandardScaler
@@ -173,15 +159,13 @@ import matplotlib.pyplot as plt, numpy as np
 from sklearn.cluster import AgglomerativeClustering
 from matplotlib.colors import ListedColormap
 from sklearn import metrics
-import re
-import sys
+import re 
 from yellowbrick.classifier import PrecisionRecallCurve
 #preprocessing libraries
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 
 #ML libraries
-import tensorflow as tf
 from sklearn.svm import SVC
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import StandardScaler
@@ -216,10 +200,8 @@ from sklearn.metrics import accuracy_score
 from pandas.plotting import scatter_matrix
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
-import xgboost as xgb
-import lightgbm as lgb
+import xgboost
 from xgboost import XGBClassifier
-from lightgbm import LGBMClassifier
 from sklearn.metrics import roc_curve,roc_auc_score
 from sklearn.metrics import log_loss
 from sklearn.preprocessing import LabelEncoder
